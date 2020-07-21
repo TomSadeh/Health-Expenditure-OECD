@@ -37,7 +37,7 @@ df_temp = pd.DataFrame(index = df_r_oecd.index, columns = df_cap.columns)
 df_results = pd.DataFrame(index = df_r_oecd.index, columns = df_oecd.columns)
 
 """a loop to fill a DataFrame, first it calculate the effective population in a country,
- and the it calcualte the country's budget according to that population"""
+ and then it calcualte the country's budget according to that population"""
 for country in df_budget.columns:
     for year in df_r_oecd.index:
         df_temp.loc[year, :] = df_r_oecd.loc[year, :] * df_oecd.loc[year, country]
